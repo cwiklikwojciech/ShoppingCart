@@ -9,10 +9,8 @@ import { Navbar } from './components/Navbar';
 import Cart from "./pages/Cart";
 import { InfoBar } from "./components/InfoBar";
 import ProductPage from "./pages/ProductPage";
-// import {useLocation} from 'react-router-dom';
 
 function App() {
-  // const location = useLocation()!;
   return (
     <ShoppingCardProvider>
     <InfoBar/>  
