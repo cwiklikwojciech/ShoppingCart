@@ -14,7 +14,7 @@ export function Example (props) {
         
           <Modal.Header closeButton />
           <Modal.Body>
-            
+            Test
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={props.onHide}>Close</Button>
