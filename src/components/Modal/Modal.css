@@ -21,3 +21,11 @@
 .modal-newsletter-container{
     background-color: #DCDCDC;
 }
+.form-control{
+    border-radius: 0 !important;
+}
+.btn{
+    border-radius: 0 !important;
+    font-size: 13px!important;
+    margin: 1px !important;
+}

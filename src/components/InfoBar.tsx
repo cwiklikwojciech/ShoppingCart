@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Example} from './Modal/Modal'
+import {ModalComponent} from './Modal/Modal'
 
 export function InfoBar (){
     const [togglePopup, setTogglePopup] = useState(true);
@@ -13,7 +13,7 @@ export function InfoBar (){
 
         
         {togglePopup ? (
-            <Example show={togglePopup} onHide={changeTogglePopup} />
+            <ModalComponent show={togglePopup} onHide={changeTogglePopup} />
         ): null}
        </>
    )
