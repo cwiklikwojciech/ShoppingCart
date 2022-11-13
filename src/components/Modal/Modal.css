@@ -1,9 +1,23 @@
 .modal-content{
     border-radius: 0!important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 .modal-header{
     border-bottom: 0!important;
 }
 .modal-footer{
     border-top: 0!important;
+}
+.modal-body{
+    padding: 0 !important;
+}
+.body-container{
+    height: 585px;
+}
+.modal-dialog{
+    max-width:858px!important;
+}
+.modal-newsletter-container{
+    background-color: #DCDCDC;
 }
