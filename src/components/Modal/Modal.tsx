@@ -1,17 +1,36 @@
+import { ChangeEvent } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import {Col, Row, Button} from 'react-bootstrap'
 import "./Modal.css";
 import InputGroup from 'react-bootstrap/InputGroup';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+
 
 import marketingImage from "/imgs/project.jpg";
 
+type NewsletterItem = { 
+  name: string
+}
+
 type ModalComponent = {
   show:boolean,
-  onHide: () => void
+  onHide: () => void,
+  handleUploadChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 export function ModalComponent ({show,onHide}:ModalComponent) {
+
+  const [newsletterItems, setNewsletterItems] = useLocalStorage<NewsletterItem[]>(
+    "newsletter-email",
+    []
+  )
+    
+  const handleUploadChange = (e: ChangeEvent<HTMLInputElement>) =>{
+    console.log(e.target.value);
+    setNewsletterItems(e.target.value);
+  }
+
     return (
         <Modal
           {...{show,onHide}}
@@ -32,6 +51,7 @@ export function ModalComponent ({show,onHide}:ModalComponent) {
                     placeholder="Twoj adres e-mail...."
                     aria-label="Username"
                     aria-describedby="basic-addon1"
+                    onChange={handleUploadChange}
                   />
                 </InputGroup>
                  
