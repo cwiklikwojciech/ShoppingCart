@@ -9,10 +9,6 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 import marketingImage from "/imgs/project.jpg";
 
-type NewsletterItem = { 
-  name: string
-}
-
 type ModalComponent = {
   show:boolean,
   onHide: () => void,
@@ -21,13 +17,12 @@ type ModalComponent = {
 
 export function ModalComponent ({show,onHide}:ModalComponent) {
 
-  const [newsletterItems, setNewsletterItems] = useLocalStorage<NewsletterItem[]>(
+  const [newsletterItems, setNewsletterItems] = useLocalStorage<string>(
     "newsletter-email",
-    []
+    ""
   )
-    
+
   const handleUploadChange = (e: ChangeEvent<HTMLInputElement>) =>{
-    console.log(e.target.value);
     setNewsletterItems(e.target.value);
   }
 
@@ -37,7 +32,6 @@ export function ModalComponent ({show,onHide}:ModalComponent) {
           aria-labelledby="contained-modal-title-vcenter"
           centered
         >
-        
           
           <Modal.Body>
             <Row>
@@ -52,6 +46,7 @@ export function ModalComponent ({show,onHide}:ModalComponent) {
                     aria-label="Username"
                     aria-describedby="basic-addon1"
                     onChange={handleUploadChange}
+                    value={newsletterItems}
                   />
                 </InputGroup>
                  
