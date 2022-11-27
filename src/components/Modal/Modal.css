@@ -2,6 +2,7 @@
     border-radius: 0!important;
     padding: 0 !important;
     margin: 0 !important;
+    min-width: 858px!important;
 }
 .modal-header{
     border-bottom: 0!important;
@@ -19,13 +20,13 @@
     max-width:858px!important;
 }
 .modal-newsletter-container{
-    background-color: #DCDCDC;
+    background-color: #f8f9fa;
 }
-.form-control{
-    border-radius: 0 !important;
+
+::placeholder {
+   text-align: center; 
 }
-.btn{
-    border-radius: 0 !important;
-    font-size: 13px!important;
-    margin: 1px !important;
+input { 
+    border: 1px solid #A09F9D;
+    text-align: center; 
 }
